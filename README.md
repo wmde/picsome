@@ -1,5 +1,7 @@
 # picsome
 
+The beta version of https://picsome.org.
+
 ## Get started
 
 Make sure the following ports are available:
