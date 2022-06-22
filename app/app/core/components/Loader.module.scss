@@ -1,0 +1,36 @@
+.loader {
+  display: flex;
+  margin: 24px 0;
+  justify-content: center;
+  align-items: center;
+  grid-column: span 12;
+}
+
+.dot {
+  width: 24px;
+  height: 24px;
+  background: #0c0079;
+  border-radius: 100%;
+  display: inline-flex;
+  animation: slide 2s infinite;
+
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      animation-delay: (0.1s * $i);
+      background: adjust-hue(#0c0079, (10 * $i));
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

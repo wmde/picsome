@@ -1,0 +1,22 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/typography.scss";
+
+.loader {
+  grid-column: span 12;
+  padding: 0 0 75px;
+
+  &__headline {
+    @extend %t-h1;
+    margin-top: 0;
+  }
+
+  &__url {
+    @extend %t-body;
+    max-width: 100%;
+    word-break: break-all;
+  }
+
+  &__spinner {
+    margin: 110px 0 40px;
+  }
+}

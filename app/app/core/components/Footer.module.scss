@@ -1,0 +1,221 @@
+@import "component-styles";
+
+.wrapper {
+  margin-top: 120px;
+
+  @include below-large() {
+    margin-top: 40px;
+  }
+}
+
+.curatedCommons {
+  background: $c-black;
+  padding: 30px 0;
+
+  svg {
+    height: 40px;
+    width: 100%;
+  }
+
+  .navigation,
+  .wiki {
+    grid-column: span 10;
+
+    @include medium() {
+      grid-column: span 12;
+    }
+
+    @include small() {
+      grid-column: span 6;
+    }
+  }
+}
+
+.navigation {
+  grid-column: span 10;
+  justify-content: space-between;
+
+  @include medium() {
+    max-width: 100%;
+    flex-flow: wrap;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  @include small() {
+    display: flex;
+    flex-direction: column;
+    grid-column: span 12;
+    gap: 24px;
+  }
+
+  a {
+    color: $c-white;
+  }
+}
+
+.wiki {
+  a {
+    .wikifooter & {
+      &:hover {
+        background-color: $c-button-secondary-hover;
+      }
+    }
+  }
+}
+
+.navigation,
+.wiki {
+  display: inline-flex;
+  list-style: none;
+  @extend %t-table-heading;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+
+  a {
+    // color: $c-white;
+
+    &:hover {
+      color: $c-default;
+    }
+  }
+
+  li + li {
+    @include medium() {
+      margin-left: 0;
+      font-size: 14px;
+    }
+
+    @include small() {
+      margin-left: 0;
+    }
+  }
+}
+
+.wikifooter {
+  background: $c-lower;
+  padding: 30px 0;
+
+  .wiki {
+    grid-column: span 8;
+
+    @include medium() {
+      grid-column: span 12;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include small() {
+      grid-column: span 6;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 24px;
+
+      li {
+        width: 100%;
+
+        a {
+          padding: 15px;
+        }
+      }
+    }
+  }
+
+  > svg {
+    height: 38px;
+  }
+
+  li + li {
+    margin-left: 15px;
+
+    @include below-large() {
+      margin-left: 0;
+    }
+  }
+}
+
+.project {
+  display: inline-flex;
+  align-items: center;
+  grid-column: 9 / span 6;
+  justify-content: flex-end;
+
+  @include below-large() {
+    grid-column: span 12;
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include small() {
+    grid-column: span 6;
+  }
+}
+
+.label {
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  margin-right: 35px;
+  white-space: nowrap;
+
+  @include below-large() {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+}
+
+.pill {
+  border-radius: 5px;
+}
+
+.logocontainer {
+  grid-column: 11 / span 2;
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 20px;
+
+  @include below-large() {
+    grid-column: span 12;
+    margin-top: 36px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  @include small() {
+    grid-column: span 6;
+  }
+}
+
+.language {
+  @extend %button;
+  background: $c-white;
+  padding: 0;
+  border-radius: 5px;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 0;
+
+  svg {
+    height: auto;
+  }
+
+  span {
+    color: $c-black;
+    margin-left: 5px;
+  }
+
+  &:hover {
+    background-color: $c-light;
+  }
+}

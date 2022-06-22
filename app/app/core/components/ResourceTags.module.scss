@@ -1,0 +1,79 @@
+@import "component-styles";
+
+.tags {
+  grid-column: span 12;
+  padding: 24px;
+  background: $c-topics;
+  margin-top: 32px;
+  border-radius: 5px;
+
+  @include small() {
+    padding: 16px;
+  }
+}
+
+.tagsearch {
+  width: 400px;
+  margin-top: 16px;
+
+  // > div {
+  //   background-color: $c-white;
+  // }
+
+  @include below-large() {
+    width: 100%;
+  }
+}
+
+.tag {
+  &__container {
+    padding: 4px 8px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid $c-default;
+    display: inline-flex;
+    background: $c-white;
+    cursor: help;
+    align-items: center;
+
+    .topic__my & {
+      background: $c-light;
+      cursor: pointer;
+
+      svg {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    margin-top: 16px;
+  }
+}
+
+.topic {
+  &__headline {
+    @extend %t-h3;
+    margin: 0;
+  }
+
+  &__list {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    @include small() {
+      margin-top: 16px;
+    }
+  }
+
+  &__my {
+    margin-top: 32px;
+    @include small() {
+      margin-top: 16px;
+    }
+  }
+}

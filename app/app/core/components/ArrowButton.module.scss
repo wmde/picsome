@@ -1,0 +1,36 @@
+@import "component-styles";
+
+.button {
+  display: flex;
+  color: $c-black;
+  @extend %t-table-heading;
+  cursor: pointer;
+
+  svg {
+    transform: translateX(0);
+    transition: transform 0.2s ease;
+    margin-left: 10px;
+  }
+
+  &:hover {
+    svg {
+      transform: translateX(5px);
+    }
+  }
+
+  &__reverse {
+    flex-direction: row-reverse;
+
+    svg {
+      transform: translateX(0) rotate(180deg);
+      margin-left: 0px;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      svg {
+        transform: translateX(-5px) rotate(180deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@import "component-styles";
+
+.feature-module {
+  padding: 56px 0;
+
+  @include small() {
+    padding: 32px 0;
+  }
+
+  &__feature {
+    grid-column: span 4;
+    padding: 12px 0;
+
+    @include medium() {
+      grid-column: span 12;
+    }
+
+    @include small() {
+      grid-column: span 6;
+    }
+
+    & + & {
+      margin-left: 55px;
+
+      @include below-large() {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__feature-num {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 100%;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    font-weight: bold;
+    margin-right: 30px;
+
+    &::after {
+      content: ".";
+      position: absolute;
+      right: 6px;
+      margin-top: 0;
+    }
+
+    @include small() {
+      width: 24px;
+      height: 24px;
+      font-size: 12px;
+      line-height: 24px;
+      margin-right: 12px;
+    }
+  }
+
+  &--license &__feature-num {
+    background: $c-green;
+    color: $c-white;
+  }
+
+  &--import &__feature-num {
+    background: $c-import;
+    color: $c-white;
+  }
+
+  &__feature-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+
+    @include small() {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__feature-headline {
+    @include small() {
+      margin: 12px 0;
+    }
+  }
+
+  &__feature-subline {
+    margin-left: 70px;
+
+    @include small() {
+      margin-left: 35px;
+    }
+  }
+
+  &__action {
+    grid-column: span 12;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+
+    @include small() {
+      grid-column: span 6;
+    }
+  }
+}

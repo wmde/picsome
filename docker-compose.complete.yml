@@ -1,0 +1,26 @@
+version: "3"
+services:
+  app:
+    build:
+      context: ./app
+      args:
+        build: dev
+    env_file:
+      - .env
+    volumes:
+      - ./app:/srv/app
+    ports:
+      # app
+      - "0.0.0.0:3000:3000"
+    depends_on:
+      - db
+      - attribution-generator-api
+  db:
+    image: "postgres:12-alpine"
+    env_file: .env
+    ports:
+      - "0.0.0.0:5432:5432"
+  attribution-generator-api:
+    build: "https://github.com/konekto/attribution-generator-api.git"
+    ports:
+      - "0.0.0.0:8181:8181"

@@ -1,0 +1,26 @@
+@import "component-styles";
+
+.label {
+  display: flex;
+  flex-direction: column;
+
+  @extend %t-body-sans;
+
+  span {
+    margin-bottom: 8px;
+    display: block;
+  }
+}
+
+.background {
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  border: 1px solid $c-black;
+  outline: none;
+  color: $c-medium;
+  background: $c-white;
+  border-radius: 5px;
+  height: 50px;
+  padding: 15px 18px;
+}

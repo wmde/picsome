@@ -1,0 +1,21 @@
+@import "component-styles";
+
+.back {
+  grid-column: span 12;
+  display: flex;
+  color: $c-black;
+  @extend %t-table-heading;
+
+  svg {
+    transform: translateX(0);
+    transition: transform 0.2s ease;
+    & + span {
+      margin-left: 10px;
+    }
+  }
+  &:hover {
+    svg {
+      transform: translateX(-5px);
+    }
+  }
+}

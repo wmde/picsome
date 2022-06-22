@@ -1,0 +1,108 @@
+@import "component-styles";
+
+.imagetext {
+  & + & {
+    margin-top: 40px;
+  }
+}
+
+.container {
+  background-color: var(--background);
+
+  border-radius: 5px;
+  display: grid;
+  grid-column: span 12;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 40px 0;
+}
+
+.inner {
+  grid-column: 2 / span 10;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-auto-flow: column;
+
+  @include small() {
+    grid-auto-flow: row;
+  }
+}
+
+.content {
+  grid-column: 6 / span 5;
+  display: grid;
+  align-items: center;
+
+  @include small() {
+    grid-column: span 12;
+  }
+}
+
+.headline {
+  @extend %t-h2;
+}
+
+.text {
+  @extend %t-lead;
+  margin-bottom: 32px;
+
+  @include small() {
+    margin-bottom: 16px;
+  }
+}
+
+.image {
+  &__container {
+    position: relative;
+    grid-column: span 4;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    @include small() {
+      grid-column: span 12;
+    }
+  }
+
+  &__helper {
+    position: relative;
+    // overflow: hidden;
+    border-radius: 8px;
+    line-height: 0;
+  }
+
+  &__attribution {
+    text-align: center;
+    margin-top: 12px;
+    font-size: 12px;
+
+    a {
+      &:visited {
+        color: $c-default;
+      }
+    }
+  }
+}
+
+.reverse {
+  .content {
+    grid-column: 1 / span 5;
+    @include small() {
+      grid-column: span 12;
+    }
+  }
+
+  .image__container {
+    grid-column: 7 / span 4;
+    @include small() {
+      grid-column: span 12;
+    }
+  }
+}
+
+.white {
+  display: flex !important;
+
+  & > div {
+    width: 100% !important;
+  }
+}

@@ -1,0 +1,96 @@
+@import "component-styles";
+
+.container {
+  padding-top: 60px;
+
+  @include small() {
+    padding-top: 24px;
+  }
+}
+
+.headline {
+  @extend %t-xl;
+  color: $c-dark;
+  margin-bottom: 32px;
+  margin-top: 0;
+
+  @include small() {
+    margin-bottom: 16px;
+  }
+}
+
+.subline {
+  @extend %t-h4;
+  margin: 0 0 32px;
+
+  @include small() {
+    margin-bottom: 16px;
+  }
+}
+
+.left {
+  grid-column: span 5;
+
+  @include small() {
+    grid-column: span 12;
+  }
+}
+
+.searchform {
+  width: 100%;
+  max-width: 100%;
+
+  @include small() {
+    padding-top: 24px;
+  }
+
+  @include small() {
+    width: 100%;
+  }
+}
+
+.right {
+  grid-column: 7 / span 6;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include small() {
+    grid-column: span 12;
+    margin-top: 16px;
+  }
+}
+
+.hero {
+  &__image {
+    display: block;
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    line-height: 0;
+
+    &__helper {
+      position: relative;
+      display: block;
+      border-radius: 5px;
+    }
+  }
+
+  &__attribution {
+    margin-top: 12px;
+    font-size: 12px;
+    text-align: center;
+
+    a {
+      &:visited {
+        color: $c-default;
+      }
+    }
+
+    @include small() {
+      text-align: left;
+    }
+  }
+}

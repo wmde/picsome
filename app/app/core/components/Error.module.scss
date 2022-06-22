@@ -1,0 +1,25 @@
+@import "component-styles";
+
+.error {
+  margin-top: 36px;
+  padding: 16px;
+  color: $c-warning;
+  display: flex;
+  flex-direction: column;
+  background: #fec5c570;
+  border-radius: 5px;
+
+  p {
+    margin: 0;
+    & + p {
+      margin: 8px 0 0;
+    }
+  }
+}
+
+.small {
+  @extend %t-small;
+  margin-top: 4px;
+  padding: 8px;
+  font-size: 12px;
+}

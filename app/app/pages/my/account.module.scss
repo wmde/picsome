@@ -1,0 +1,141 @@
+@import "../../../styles/button.scss";
+
+.header {
+  display: flex;
+  grid-column: span 12;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 24px 0 40px;
+}
+
+.full {
+  grid-column: span 12;
+}
+
+.button {
+  @extend %button--small;
+  margin: 0 0 0 8px;
+}
+
+.empty {
+  &__container {
+    grid-column: span 6;
+  }
+
+  &__intro {
+    margin: 55px 0 16px;
+  }
+}
+
+.headline {
+  display: flex;
+  align-items: center;
+  grid-column: span 12;
+  margin-top: 0;
+
+  @include small() {
+    grid-column: span 6;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+}
+
+.section + .section {
+  margin-top: 80px;
+
+  @include small() {
+    margin-top: 24px;
+  }
+}
+
+.resources {
+  grid-column: span 12;
+  display: grid;
+  flex-wrap: wrap;
+  gap: 16px;
+  grid-template-columns: repeat(12, 1fr);
+
+  @include small() {
+    grid-column: span 6;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.placeholder {
+  display: block;
+  position: relative;
+  padding-bottom: 66.66%;
+  grid-column: span 5;
+  color: $c-preview-stroke;
+  cursor: pointer;
+  align-self: flex-start;
+  background: none;
+  border: none;
+
+  &:hover {
+    color: $c-dark;
+  }
+
+  @include medium() {
+    grid-column: span 4;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 16px;
+    border: 2px dashed currentColor;
+    border-radius: 5px;
+    @extend %t-small-bold;
+    background: $c-lower;
+
+    svg {
+      width: 14px;
+      height: 14px;
+      margin-right: 6px;
+
+      path {
+        fill: currentColor;
+      }
+    }
+  }
+}
+
+.onboarding {
+  grid-column: 8 / span 6;
+
+  &__inner {
+    padding: 20px;
+    border-radius: 5px;
+    background: #eeeaff;
+    color: #000;
+    position: relative;
+  }
+
+  h3 {
+    margin: 0;
+  }
+
+  &__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+  }
+}
+
+.notification {
+  grid-column: span 12;
+  margin-top: 0;
+  margin-bottom: 24px;
+}

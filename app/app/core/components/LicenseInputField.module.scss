@@ -1,0 +1,24 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/typography.scss";
+
+.container {
+  background: $c-white;
+  border-radius: 5px 0 0 5px;
+  display: inline-flex;
+  height: 50px;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.icon {
+  margin: 0 10px;
+  display: flex;
+}
+
+.search {
+  height: 100%;
+  flex-grow: 1;
+  border: 0 none;
+  outline: none;
+  color: $c-medium;
+}

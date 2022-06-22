@@ -1,0 +1,67 @@
+@import "component-styles";
+
+.container {
+  width: 100vw;
+  padding-left: 80px;
+  padding-right: 80px;
+
+  @include medium() {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @include small() {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0px 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  @include medium() {
+    gap: 0px 16px;
+  }
+
+  @include small() {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0px 12px;
+  }
+
+  > * {
+    min-width: 0; // <-- This did fix the problem
+  }
+}
+
+.auto {
+  grid-template-columns: auto;
+}
+
+.gap {
+  row-gap: 40px;
+
+  @include small() {
+    row-gap: 16px;
+  }
+}
+
+.collections {
+  grid-template-columns: repeat(20, 1fr);
+  row-gap: 24px;
+
+  @include medium() {
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+    row-gap: 20px;
+  }
+
+  @include small() {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
+    row-gap: 40px;
+  }
+}

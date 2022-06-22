@@ -1,0 +1,17 @@
+@import "component-styles";
+
+.collection-type-indicator {
+  display: flex;
+  align-items: center;
+  @extend %t-small-bold;
+  color: $c-black;
+
+  &__icon {
+    display: inline-flex;
+    padding-right: 8px;
+
+    svg {
+      fill: currentColor;
+    }
+  }
+}
