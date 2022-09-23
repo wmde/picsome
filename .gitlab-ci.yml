@@ -1,0 +1,79 @@
+image: docker:20.10.6
+services:
+  - docker:20.10.6-dind
+
+stages:
+  - build
+  - release
+
+variables:
+  PCS_DOCKERFILE: Dockerfile
+  PCS_RELEASE_IMAGE: $CI_REGISTRY_IMAGE/app
+  PCS_STAGING_IMAGE: $CI_REGISTRY_IMAGE/staging
+
+before_script:
+  - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+
+build:
+  stage: build
+  script:
+    - echo "FLICKR_API_KEY"=$FLICKR_API_KEY >> ".env.local"
+    - echo "FLICKR_API_SECRET"=$FLICKR_API_SECRET >> ".env.local"
+    - echo "DATABASE_URL"=$DATABASE_URL >> ".env.local"
+    - echo "MAGIC_LINK_SECRET"=$MAGIC_LINK_SECRET >> ".env.local"
+    - echo "ATTRIBUTION_GENERATOR_API"=$ATTRIBUTION_GENERATOR_API >> ".env.local"
+    - echo "NEXT_PUBLIC_TRANSIFEX_TOKEN"=$NEXT_PUBLIC_TRANSIFEX_TOKEN >> ".env.local"
+    - echo "MAILER"=$MAILER >> ".env.local"
+    - echo "SEARCH_API_CLIENT_ID"=$SEARCH_API_CLIENT_ID >> ".env.local"
+    - echo "SEARCH_API_CLIENT_SECRET"=$SEARCH_API_CLIENT_SECRET >> ".env.local"
+    - echo "RAPIDMAIL_RECIPIENT_LIST_ID"=$RAPIDMAIL_RECIPIENT_LIST_ID >> ".env.local"
+    - echo "RAPIDMAIL_API_USERNAME"=$RAPIDMAIL_API_USERNAME >> ".env.local"
+    - echo "API_JOBS_TOKEN"=$API_JOBS_TOKEN >> ".env.local"
+    - echo "HOST"="https://picsome.org" >> ".env.local"
+    - docker build --pull -f $PCS_DOCKERFILE -t $PCS_RELEASE_IMAGE:$CI_COMMIT_SHA .
+    - docker push $PCS_RELEASE_IMAGE:$CI_COMMIT_SHA
+  only:
+    - main
+
+build-staging:
+  stage: build
+  script:
+    - echo "FLICKR_API_KEY"=$FLICKR_API_KEY >> ".env.local"
+    - echo "FLICKR_API_SECRET"=$FLICKR_API_SECRET >> ".env.local"
+    - echo "DATABASE_URL"=$STAGING_DATABASE_URL >> ".env.local"
+    - echo "MAGIC_LINK_SECRET"=$MAGIC_LINK_SECRET >> ".env.local"
+    - echo "ATTRIBUTION_GENERATOR_API"=$ATTRIBUTION_GENERATOR_API >> ".env.local"
+    - echo "NEXT_PUBLIC_TRANSIFEX_TOKEN"=$NEXT_PUBLIC_TRANSIFEX_TOKEN >> ".env.local"
+    - echo "SEARCH_API_CLIENT_ID"=$SEARCH_API_CLIENT_ID >> ".env.local"
+    - echo "SEARCH_API_CLIENT_SECRET"=$SEARCH_API_CLIENT_SECRET >> ".env.local"
+    - echo "RAPIDMAIL_RECIPIENT_LIST_ID"=$RAPIDMAIL_RECIPIENT_LIST_ID >> ".env.local"
+    - echo "RAPIDMAIL_API_USERNAME"=$RAPIDMAIL_API_USERNAME >> ".env.local"
+    - echo "API_JOBS_TOKEN"=$API_JOBS_TOKEN >> ".env.local"
+    - echo "MAILER"=$MAILER >> ".env.local"
+    - echo "HOST"="https://staging.picsome.org" >> ".env.local"
+    - docker build --pull -f $PCS_DOCKERFILE -t $PCS_STAGING_IMAGE:$CI_COMMIT_SHA .
+    - docker push $PCS_STAGING_IMAGE:$CI_COMMIT_SHA
+  only:
+    - staging
+
+release:
+  stage: release
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - docker pull $PCS_RELEASE_IMAGE:$CI_COMMIT_SHA
+    - docker tag $PCS_RELEASE_IMAGE:$CI_COMMIT_SHA $PCS_RELEASE_IMAGE:latest
+    - docker push $PCS_RELEASE_IMAGE:latest
+  only:
+    - main
+
+release-staging:
+  stage: release
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - docker pull $PCS_STAGING_IMAGE:$CI_COMMIT_SHA
+    - docker tag $PCS_STAGING_IMAGE:$CI_COMMIT_SHA $PCS_STAGING_IMAGE:latest
+    - docker push $PCS_STAGING_IMAGE:latest
+  only:
+    - staging

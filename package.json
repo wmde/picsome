@@ -1,0 +1,80 @@
+{
+  "name": "picsome",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "prisma generate && blitz dev",
+    "build": "blitz build",
+    "start": "blitz start",
+    "studio": "blitz prisma studio",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
+    "typecheck": "tsc",
+    "typecheck:watch": "tsc -w --pretty --skipLibCheck --noEmit ",
+    "prepare": "cd .. && husky install app/.husky",
+    "pm2-blitz": "pm2 start npm -- start",
+    "pm2-status": "pm2 status",
+    "pm2-logs": "pm2 logs"
+  },
+  "prisma": {
+    "schema": "db/schema.prisma"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 100
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "@prisma/client": "^4.0.0",
+    "@transifex/cli": "1.0.0",
+    "@transifex/native": "1.0.0",
+    "@transifex/react": "1.0.0",
+    "@types/mjml-react": "2.0.4",
+    "blitz": "^0.45.4",
+    "classnames": "2.2.6",
+    "consola": "2.15.3",
+    "csv-stringify": "6.0.5",
+    "final-form": "4.20.2",
+    "flickr-sdk": "3.10.0",
+    "html-entities": "2.3.3",
+    "jotai": "1.4.2",
+    "lodash": "4.17.21",
+    "mjml": "4.13.0",
+    "mjml-react": "2.0.8",
+    "node-fetch": "^2.6.0",
+    "nodemailer": "6.6.3",
+    "passport-magic-login": "1.0.7",
+    "pg": "8.6.0",
+    "pm2": "5.1.2",
+    "pos": "0.4.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-final-form": "6.5.3",
+    "react-tooltip": "4.2.21",
+    "sass": "1.35.2",
+    "sharp": "0.29.1",
+    "use-debounce": "8.0.1",
+    "zod": "3.5.1"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "2.5.12",
+    "@types/preview-email": "2.0.1",
+    "@types/react": "18.0.1",
+    "eslint": "7.31.0",
+    "husky": "6.0.0",
+    "lint-staged": "10.5.4",
+    "prettier": "2.3.2",
+    "prettier-plugin-prisma": "0.14.0",
+    "pretty-quick": "3.1.1",
+    "preview-email": "3.0.4",
+    "prisma": "^4.0.0",
+    "styled-jsx-plugin-sass": "1.0.0",
+    "typescript": "~4.5",
+    "typescript-plugin-css-modules": "3.4.0"
+  },
+  "private": true
+}

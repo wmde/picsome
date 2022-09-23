@@ -1,0 +1,31 @@
+version: "3"
+services:
+  app:
+    image: "registry.gitlab.com/konekto/wikimedia/curated-commons/staging"
+    env_file: .env.local
+    ports:
+      - "127.0.0.1:3000:3000"
+    volumes:
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      - db
+      - attribution-generator-api
+    command: sh -c "blitz prisma generate && blitz start"
+  db:
+    image: "postgres:12-alpine"
+    env_file: .env.local
+    ports:
+      - "127.0.0.1:5432:5432"
+    restart: always
+    volumes:
+      - database:/var/lib/postgresql/data
+  attribution-generator-api:
+    build: "https://github.com/konekto/attribution-generator-api.git"
+    ports:
+      - "127.0.0.1:8181:8181"
+    restart: always
+
+volumes:
+  database:
+    driver: local

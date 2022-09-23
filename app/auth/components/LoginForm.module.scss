@@ -1,0 +1,50 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/typography.scss";
+@import "../../../styles/button.scss";
+@import "../../../styles/media.scss";
+
+.headline {
+  @extend %t-h1;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.form {
+  button {
+    margin-top: 24px;
+
+    @include small() {
+      margin-top: 12px;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+
+.label {
+  display: block;
+  @extend %t-body-sans;
+  margin-bottom: 24px;
+
+  &__small {
+    @extend %t-small;
+    display: flex;
+    margin: 24px 0;
+  }
+}
+
+.success {
+  display: flex;
+  align-items: center;
+  @extend %t-body-sans;
+  margin-top: 50px;
+
+  svg {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    min-height: 40px;
+    margin-right: 16px;
+  }
+}

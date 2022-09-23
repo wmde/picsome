@@ -1,0 +1,260 @@
+@import "../../../styles/shared.scss";
+
+.multi-import {
+  padding: 40px 0;
+  background: $c-import;
+
+  @include small() {
+    padding: 24px 0;
+  }
+
+  &--import-complete {
+    padding: 88px 0;
+    background: $c-green;
+    color: $c-white;
+    text-align: center;
+
+    @include small() {
+      padding: 48px 0;
+    }
+  }
+
+  &__inner {
+    grid-column: span 12;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @include small {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__header-headline {
+    @extend %t-h1;
+    margin: 0;
+
+    @include small {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__header-detail {
+    @extend %t-body;
+  }
+
+  &__copy {
+    margin: 0;
+    @extend %t-body;
+  }
+
+  &__step {
+    display: block;
+  }
+
+  &__step-headline {
+    @extend %t-h3;
+    margin: 32px 0;
+  }
+
+  &__step-error {
+    padding-bottom: 40px;
+  }
+
+  &__url {
+    @extend %t-body;
+    max-width: 100%;
+    word-break: break-all;
+  }
+
+  &__spinner {
+    margin: 110px 0 40px;
+  }
+
+  &__resources {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+
+  &__resource {
+    position: relative;
+    grid-column: span 6;
+    overflow: hidden;
+    background: $c-white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    @extend %s-shadow;
+
+    @include medium {
+      grid-column: span 4;
+    }
+
+    @include large {
+      grid-column: span 2;
+    }
+  }
+
+  &__resource-image {
+    padding-bottom: 81.77%;
+  }
+
+  &__resource-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $c-green;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  &__resource:hover &__resource-overlay {
+    opacity: 0.4;
+  }
+
+  &__resource--selected &__resource-overlay,
+  &__resource--selected:hover &__resource-overlay {
+    opacity: 0.85;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 28px;
+    position: sticky;
+    bottom: 0;
+    padding: 20px;
+    background: #fde8f0;
+    z-index: 3;
+  }
+
+  &__btn-back {
+    @extend %link-button;
+  }
+
+  &__btn-continue {
+    @extend %button;
+    margin-left: 24px;
+  }
+
+  &__btn-create-collection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 40px 16px;
+    border: 2px dashed currentColor;
+    border-radius: 5px;
+    @extend %t-small-bold;
+    color: $c-preview-stroke;
+    background: $c-lower;
+    cursor: pointer;
+
+    &:hover {
+      color: $c-dark;
+    }
+
+    svg {
+      width: 14px;
+      height: 14px;
+      margin-right: 6px;
+
+      path {
+        fill: currentColor;
+      }
+    }
+  }
+
+  &__selection {
+    display: flex;
+    flex-direction: column;
+
+    @include large {
+      flex-direction: row;
+    }
+  }
+
+  &__selection-section {
+    padding-top: 40px;
+
+    @include large {
+      width: 50%;
+    }
+  }
+
+  &__selection-headline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    svg {
+      margin-right: 8px;
+    }
+  }
+
+  &__selection-collections {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+
+    @include medium {
+      grid-template-columns: repeat(9, 1fr);
+    }
+
+    @include large {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+
+  &__complete-headline {
+    margin: 0 0 32px 0;
+    @extend %t-h1;
+    text-align: center;
+  }
+
+  &__complete-copy {
+    margin: 0;
+    @extend %t-body;
+    text-align: center;
+  }
+
+  &__complete-action {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 32px;
+    @extend %t-table-heading;
+    color: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    svg {
+      margin-left: 12px;
+
+      path {
+        fill: currentColor;
+      }
+    }
+  }
+
+  &__complete-icon {
+    margin-top: 72px;
+
+    svg {
+      width: 106px;
+      height: 85px;
+    }
+  }
+}

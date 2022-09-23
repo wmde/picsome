@@ -1,0 +1,171 @@
+@import "../../../styles/shared.scss";
+
+.container {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.report {
+  display: inline-flex;
+  padding: 9px 0;
+  color: $c-warning;
+  font-size: 14px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  span {
+    margin-left: 8px;
+  }
+
+  @include small() {
+    font-size: 12px;
+  }
+}
+
+.form_container {
+  display: flex;
+  position: absolute;
+  z-index: 3;
+  transform: translateY(48px);
+  width: 450px;
+
+  @include below-large() {
+    width: calc(100vw - 80px);
+    left: 40px;
+  }
+}
+
+.form_inner {
+  position: relative;
+  padding: 32px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.22);
+  border-radius: 4px;
+  width: 462px;
+  background-color: #ffffff;
+
+  @include below-large() {
+    width: 100%;
+  }
+
+  h3 {
+    @extend %t-h4;
+    margin-top: 0;
+    margin-bottom: 38px;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  z-index: 4;
+  cursor: pointer;
+}
+
+.reasons {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    & + label {
+      margin-top: 16px;
+    }
+  }
+
+  & + .button {
+    margin-top: 16px;
+  }
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  left: 25px;
+  top: -10px;
+  z-index: 4;
+  position: absolute;
+
+  @include medium() {
+    left: 60%;
+  }
+}
+
+.reportlabel {
+  @extend %t-body-sans;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.radio {
+  width: 24px;
+  height: 24px;
+  margin: 0 8px 0 0;
+}
+
+.button {
+  @extend %button--small;
+  display: inline-flex;
+  align-self: flex-end;
+  margin-top: 0;
+}
+
+.textarea {
+  margin-top: 8px;
+  width: 100%;
+  height: 120px;
+  outline: 0;
+  border: 1px solid $c-black;
+  border-radius: 5px;
+  padding: 10px;
+  @extend %t-body-sans;
+  resize: none;
+
+  &::placeholder {
+    @extend %t-body-sans;
+  }
+}
+
+.back {
+  display: inline-flex;
+  color: $c-black;
+  @extend %t-table-heading;
+  cursor: pointer;
+
+  svg {
+    transform: translateX(0);
+    transition: transform 0.2s ease;
+    margin-right: 10px;
+  }
+
+  &:hover {
+    svg {
+      transform: translateX(-5px);
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}

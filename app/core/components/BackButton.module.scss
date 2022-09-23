@@ -1,0 +1,23 @@
+@import "component-styles";
+
+.back-button {
+  display: inline-flex;
+  color: $c-black;
+  @extend %t-table-heading;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  svg {
+    transform: translateX(0);
+    transition: transform 0.2s ease;
+    & + span {
+      margin-left: 10px;
+    }
+  }
+  &:hover {
+    svg {
+      transform: translateX(-5px);
+    }
+  }
+}

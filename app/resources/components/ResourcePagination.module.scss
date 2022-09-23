@@ -1,0 +1,68 @@
+@import "../../../styles/shared.scss";
+
+.resource-pagination {
+  grid-column: span 12;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 32px 0;
+
+    @include small() {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__headline {
+    margin: 0;
+
+    @include small() {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 560px;
+  }
+
+  &__items {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(12, 1fr);
+
+    @include small() {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 240px;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 32px 0 0 0;
+
+    @include small() {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__pagination {
+    @include small() {
+      width: 100%;
+    }
+  }
+}

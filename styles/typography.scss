@@ -1,0 +1,183 @@
+@import "colors";
+@import "media";
+
+$font-primary: "Montserrat", sans-serif;
+$font-body: "Source Serif Pro", serif;
+
+%t-body {
+  font-family: $font-body;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+%t-body-sans {
+  //styleName: Text / Body / Sans;
+  font-family: $font-primary;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0px;
+  text-align: left;
+
+  @include below-large() {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+%t-lead {
+  //styleName: Text / Lead;
+  font-family: $font-primary;
+  font-style: normal;
+  font-size: 27px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: 0px;
+  text-align: left;
+
+  @include below-large() {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+%t-small {
+  //styleName: Text / Small;
+  font-family: $font-primary;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+%t-small-bold {
+  font-family: $font-primary;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+%t-table-heading {
+  //styleName: Heading / Table;
+  font-family: $font-primary;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+
+  @include small() {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+%t-table-text {
+  //styleName: Text / Table;
+  font-family: $font-primary;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+%t-xl {
+  font-family: $font-primary;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 70px;
+  letter-spacing: 0px;
+  text-align: left;
+
+  @include below-large() {
+    font-size: 30px;
+    line-height: 36px;
+  }
+}
+
+%t-h1 {
+  font-family: $font-primary;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 42px;
+  letter-spacing: 0px;
+  text-align: left;
+
+  @include below-large() {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+%t-h2 {
+  font-family: $font-primary;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0px;
+  text-align: left;
+
+  @include below-large() {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+%t-h3 {
+  //styleName: Heading / H3;
+  font-family: $font-primary;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 31px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+%t-h4 {
+  font-family: $font-primary;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 0px;
+  text-align: left;
+
+  @include below-large() {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.h1 {
+  @extend %t-h1;
+}
+.h2 {
+  @extend %t-h2;
+}
+.h3 {
+  @extend %t-h3;
+}
+.h4 {
+  @extend %t-h4;
+}
+
+.highlight {
+  background-color: $c-topics;
+}

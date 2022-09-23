@@ -1,0 +1,16 @@
+version: "3"
+services:
+  app:
+    image: "registry.gitlab.com/konekto/wikimedia/curated-commons/app"
+    env_file: .env.local
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      - attribution-generator-api
+    command: sh -c "blitz prisma generate && blitz start"
+    restart: always
+  attribution-generator-api:
+    build: "https://github.com/konekto/attribution-generator-api.git"
+    ports:
+      - "127.0.0.1:8181:8181"
+    restart: always

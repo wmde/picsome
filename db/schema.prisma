@@ -1,0 +1,298 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// --------------------------------------
+
+model User {
+  id                  Int       @id @default(autoincrement())
+  createdAt           DateTime  @default(now())
+  termsSignedAt       DateTime?
+  updatedAt           DateTime  @updatedAt
+  name                String?
+  email               String    @unique
+  newUnconfirmedEmail String?
+  hashedPassword      String?
+  role                String    @default("USER")
+
+  tokens            Token[]
+  sessions          Session[]
+  items             CollectionItem[]
+  collections       Collection[]     @relation("UserOwnsCollections")
+  joinedCollections Collection[]     @relation("UserJoinedCollections")
+  reports           Report[]
+  Tag               Tag[]
+}
+
+model BlockedUser {
+  id             Int      @id @default(autoincrement())
+  originalUserId Int      @unique
+  email          String   @unique
+  blockMessage   String
+  blockedAt      DateTime @default(now())
+}
+
+model Session {
+  id                 Int       @id @default(autoincrement())
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  expiresAt          DateTime?
+  handle             String    @unique
+  hashedSessionToken String?
+  antiCSRFToken      String?
+  publicData         String?
+  privateData        String?
+
+  user   User? @relation(fields: [userId], references: [id])
+  userId Int?
+}
+
+model Token {
+  id          Int       @id @default(autoincrement())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  hashedToken String
+  type        TokenType
+  expiresAt   DateTime
+  sentTo      String
+
+  user   User @relation(fields: [userId], references: [id])
+  userId Int
+
+  @@unique([hashedToken, type])
+}
+
+enum TokenType {
+  RESET_PASSWORD
+  CONFIRM_NEW_EMAIL
+}
+
+// Begin of App Specific Model
+enum ResourceFileformat {
+  JPG
+  PNG
+  GIF
+  SVG
+  Other
+}
+
+enum ResourceAspect {
+  Portrait
+  Landscape
+  Square
+}
+
+enum ResourceSize {
+  Big
+  Medium
+  Small
+}
+
+model Resource {
+  id          Int              @id @default(autoincrement())
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  resourceUrl String
+  thumbUrl    String
+  imgUrl      String
+  blurDataUrl String?
+  title       String // TODO: Make optional
+  authorName  String // TODO: Make optional
+  authorUrl   String // TODO: Make optional
+  resolutionX Int // TODO: Make optional
+  resolutionY Int // TODO: Make optional
+  sizeBytes   Int // TODO: Make optional
+  license     License          @relation(fields: [licenseId], references: [id])
+  licenseId   Int
+  details     ResourceDetails  @relation(fields: [detailsId], references: [id])
+  detailsId   Int
+  repository  String
+  items       CollectionItem[]
+  tags        Tag[]
+  hiddentags  HiddenTag[]
+  reports     Report[]
+
+  @@unique(resourceUrl)
+}
+
+model ResourceDetails {
+  id         Int                @id @default(autoincrement())
+  createdAt  DateTime           @default(now())
+  updatedAt  DateTime           @updatedAt
+  aspect     ResourceAspect
+  fileformat ResourceFileformat
+  size       ResourceSize
+  resources  Resource[]
+
+  @@unique([aspect, fileformat, size])
+}
+
+enum LicenseSource {
+  Seed
+  AttributionAPI
+  Wikidata
+}
+
+model License {
+  id           Int               @id @default(autoincrement())
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+  wdId         String
+  title        String
+  group        LicenseGroup      @relation(fields: [groupId], references: [id])
+  groupId      LicenseGroupValue
+  version      String
+  variant      String
+  spdxCode     String
+  canonicalUrl String
+  source       LicenseSource     @default(Seed)
+  rawSource    Json?
+
+  Resource Resource[]
+  @@unique(canonicalUrl)
+}
+
+enum LicenseGroupValue {
+  CC0
+  PD
+  CCBY
+  CCBYSA
+  CCBYNC
+  CCBYND
+  CCBYNCSA
+  CCBYNCND
+}
+
+model LicenseGroup {
+  id       LicenseGroupValue @id
+  features LicenseFeature[]
+  licenses License[]
+}
+
+model LicenseFeature {
+  id     LicenseFeatureValue @id
+  groups LicenseGroup[]
+}
+
+enum LicenseFeatureValue {
+  Commercial
+  Modify
+  Distribute
+  NameAuthor
+  ShareAlike
+}
+
+model WikidataItem {
+  wdId        String              @id
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
+  Tag         Tag[]
+  labels      WikidataItemLabel[]
+  collections Collection[]        @relation("CollectionTags")
+}
+
+model WikidataItemLabel {
+  id          Int          @id @default(autoincrement())
+  wdId        String
+  locale      String
+  label       String
+  description String
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  item        WikidataItem @relation(fields: [wdId], references: [wdId])
+
+  @@unique([wdId, locale])
+}
+
+model HiddenTag {
+  id         Int      @id @default(autoincrement())
+  wdId       String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  resource   Resource @relation(fields: [resourceId], references: [id])
+  resourceId Int
+}
+
+model Tag {
+  id               Int          @id @default(autoincrement())
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+  wdId             String
+  label            String
+  description      String
+  user             User         @relation(fields: [userId], references: [id])
+  resource         Resource     @relation(fields: [resourceId], references: [id])
+  userId           Int
+  resourceId       Int
+  wikidataItem     WikidataItem @relation(fields: [wikidataItemWdId], references: [wdId])
+  wikidataItemWdId String
+}
+
+model CollectionItem {
+  id           Int         @id @default(autoincrement())
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  resource     Resource    @relation(fields: [resourceId], references: [id])
+  resourceId   Int
+  user         User        @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  userId       Int
+  collection   Collection? @relation(fields: [collectionId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  collectionId Int?
+}
+
+enum CollectionType {
+  PrivateCollection
+  JointCollection
+  SmartCollection
+}
+
+model Collection {
+  id         Int              @id @default(autoincrement())
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+  type       CollectionType   @default(PrivateCollection)
+  title      String
+  items      CollectionItem[]
+  tags       WikidataItem[]   @relation("CollectionTags")
+  user       User             @relation("UserOwnsCollections", fields: [userId], references: [id])
+  userId     Int
+  collectors User[]           @relation("UserJoinedCollections")
+  reports    Report[]
+}
+
+enum ReportReason {
+  CopyrightViolation
+  MatureContent
+  Other
+}
+
+enum ReportStatus {
+  Pending
+  Removed
+  Settled
+  Closed
+}
+
+model Report {
+  id           Int          @id @default(autoincrement())
+  status       ReportStatus @default(Pending)
+  reason       ReportReason
+  message      String
+  ruling       String?
+  user         User?        @relation(fields: [userId], references: [id], onUpdate: Cascade, onDelete: SetNull)
+  userId       Int?
+  resource     Resource?    @relation(fields: [resourceId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  resourceId   Int?
+  collection   Collection?  @relation(fields: [collectionId], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  collectionId Int?
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+}

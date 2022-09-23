@@ -1,0 +1,99 @@
+@import "component-styles";
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 24px;
+
+  @include small() {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.footer {
+  grid-column: span 12;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.image {
+  grid-column: span 4;
+  height: 200px;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.imageAction {
+  grid-column: span 8;
+}
+
+.button {
+  display: inline-flex;
+}
+
+.createForm {
+  grid-column: 6 / span 6;
+
+  button {
+    margin-top: 25px;
+  }
+}
+
+.collectionType {
+  padding-top: 16px;
+}
+
+.selection {
+  grid-column: span 12;
+  display: grid;
+  gap: 120px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 64px;
+
+  @include small() {
+    gap: 24px;
+  }
+
+  @include medium() {
+    gap: 24px;
+  }
+}
+
+.selectionHeadline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 0 24px 0;
+  @extend %t-h3;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+}
+
+.selectionHalf {
+  grid-column: span 1;
+
+  @include small() {
+    grid-column: span 2;
+  }
+
+  @include medium() {
+    grid-column: span 2;
+  }
+}
+
+.collections {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include small() {
+    gap: 16px;
+  }
+}

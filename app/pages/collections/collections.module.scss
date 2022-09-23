@@ -1,0 +1,157 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/typography.scss";
+@import "../../../styles/button.scss";
+@import "../../../styles/media.scss";
+
+.main {
+  padding: 40px 0;
+
+  @include small() {
+    padding: 20px 0;
+  }
+}
+
+.headline {
+  @extend %t-h2;
+  margin: 0;
+
+  @include small() {
+    width: 100%;
+    display: block;
+  }
+}
+
+.author {
+  @extend %t-lead;
+  margin-left: 40px;
+  font-size: 27px;
+
+  @include small() {
+    margin-left: 0;
+    font-size: 16px;
+  }
+}
+
+.bar {
+  grid-column: span 12;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  position: relative;
+
+  @include small() {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.barGroup {
+  display: flex;
+  align-items: center;
+}
+
+.barButton {
+  margin-left: 16px;
+}
+
+.collection {
+  grid-column: span 12;
+  margin-top: 40px;
+}
+
+.delete {
+  @extend %button--small;
+  background-color: $c-warning;
+  color: $c-white;
+
+  @include small() {
+    top: -70px;
+  }
+
+  &:hover {
+    background-color: #fec5c5;
+    color: $c-warning;
+  }
+}
+
+.edit {
+  margin-left: 12px;
+  cursor: pointer;
+
+  @include small() {
+    position: absolute;
+    right: 20px;
+  }
+}
+
+.title {
+  @extend .headline;
+  outline: 0;
+  border: 0;
+}
+
+.typeControl {
+  grid-column: span 12;
+  padding-top: 40px;
+
+  @include small() {
+    padding-top: 20px;
+  }
+}
+
+.typeIndicator {
+  grid-column: span 12;
+  padding: 32px 0 10px;
+  // padding-top: 40px;
+
+  @include small() {
+    padding-top: 20px;
+  }
+}
+
+.tags {
+  grid-column: span 12;
+  padding-top: 32px;
+}
+
+.pagination {
+  grid-column: span 20;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 48px;
+
+  @include medium() {
+    margin-top: 32px;
+    grid-column: span 12;
+  }
+
+  @include small() {
+    grid-column: span 4;
+    margin-top: 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__full {
+    justify-content: space-between;
+  }
+}
+
+.emptyContainer {
+  grid-column: span 12;
+}
+
+.emptyCopy {
+  @extend %t-body-sans;
+}
+
+.emptyImage {
+  display: table;
+  margin: 0 auto;
+}
+
+.reportsSection {
+  margin-top: 40px;
+}

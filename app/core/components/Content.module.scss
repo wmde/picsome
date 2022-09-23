@@ -1,0 +1,28 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/typography.scss";
+@import "../../../styles/media.scss";
+
+.content {
+  grid-column: span 12;
+  margin-top: 60px;
+
+  @include small() {
+    grid-column: span 6;
+    margin-top: 24px;
+  }
+
+  a {
+    &:visited {
+      color: $c-default;
+    }
+  }
+
+  p {
+    @extend %t-body-sans;
+  }
+
+  h2 {
+    margin-top: 60px;
+    margin-bottom: 32px;
+  }
+}

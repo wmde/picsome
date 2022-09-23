@@ -1,0 +1,65 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(80, 90, 99, 0.5);
+  z-index: 9;
+  display: grid;
+  align-content: center;
+}
+
+.modal__content {
+  grid-column: 2 / span 10;
+  background: $c-white;
+  padding: 0 55px 55px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  border-radius: 5px;
+  overflow: hidden;
+
+  @include small() {
+    grid-column: span 12;
+    width: 100%;
+    padding: 0 30px 40px;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  padding: 25px;
+}
+
+.modal__header {
+  background: $c-collect;
+  display: flex;
+  margin-left: -55px;
+  margin-right: -55px;
+  height: 120px;
+  grid-column: span 12;
+  margin-bottom: -65px;
+
+  @include small() {
+    height: 80px;
+    margin-bottom: -20px;
+  }
+}
+
+.modal__inner {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+
+  @include small() {
+    grid-template-columns: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}

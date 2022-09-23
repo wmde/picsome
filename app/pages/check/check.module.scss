@@ -1,0 +1,38 @@
+@import "../../../styles/shared.scss";
+
+.backRow {
+  padding-bottom: 32px;
+  grid-column: span 12;
+}
+
+.license {
+  background: $c-license;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include small() {
+    padding: 24px 0;
+  }
+}
+
+.image {
+  overflow: hidden;
+  border-radius: 5px;
+  line-height: 0;
+}
+
+.attribution {
+  margin-top: 12px;
+  font-size: 12px;
+  text-align: center;
+
+  a {
+    &:visited {
+      color: $c-default;
+    }
+  }
+
+  @include small() {
+    text-align: left;
+  }
+}

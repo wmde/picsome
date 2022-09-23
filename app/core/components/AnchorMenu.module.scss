@@ -1,0 +1,63 @@
+@import "component-styles";
+
+.anchor-menu {
+  $block: &;
+
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 9;
+
+  @include large() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__headline {
+    margin: 0;
+    padding-bottom: 16px;
+    @extend %t-h1;
+
+    @include large() {
+      padding: 0;
+    }
+  }
+
+  &__scrollable {
+    overflow-x: auto;
+    overflow-y: hidden;
+    touch-action: pan-x;
+  }
+
+  &__list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+
+  // Winning the specificity war over 'page content' styles
+  a#{$block}__link,
+  a#{$block}__link:visited {
+    display: block;
+    padding: 12px;
+    color: $c-black;
+    white-space: nowrap;
+    @extend %t-small-bold;
+  }
+
+  &__list:not(:hover) a#{$block}__link--active,
+  &__list:not(:hover) a#{$block}__link--active:visited,
+  a#{$block}__link:hover {
+    color: $c-default;
+  }
+
+  &__item:first-child &__link {
+    padding-left: 0;
+  }
+
+  &__item:last-child &__link {
+    padding-right: 0;
+  }
+}

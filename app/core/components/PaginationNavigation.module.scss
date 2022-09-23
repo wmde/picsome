@@ -1,0 +1,18 @@
+@import "component-styles";
+
+.pagination-navigation {
+  display: flex;
+  flex-direction: row;
+
+  @include small() {
+    justify-content: space-between;
+  }
+
+  &__count {
+    padding: 0 16px;
+
+    @include small() {
+      display: none;
+    }
+  }
+}

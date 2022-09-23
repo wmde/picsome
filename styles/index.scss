@@ -1,0 +1,68 @@
+@import "./shared.scss";
+@import "./fonts.scss";
+
+// html {
+//   //scroll-behavior: smooth;
+// }
+
+body {
+  font-family: $font-primary;
+  margin: 0 auto;
+  background: $c-white;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+a {
+  text-decoration: none;
+  transition: color ease 0.15s;
+}
+
+p {
+  a {
+    &:visited {
+      color: $c-default;
+    }
+  }
+}
+
+.autocomplete-icon {
+  margin: 0 10px;
+}
+
+.button {
+  @extend %button;
+
+  &:hover {
+    @extend %button--hover;
+  }
+
+  &:disabled {
+    @extend %button--disabled;
+  }
+
+  &--small {
+    @extend %button--small;
+  }
+
+  &--secondary {
+    @extend %button--secondary;
+  }
+
+  &--light {
+    @extend %button--light;
+  }
+
+  svg + span {
+    margin-left: 5px;
+  }
+}
+
+.link-button {
+  @extend %link-button;
+}

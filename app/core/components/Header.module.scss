@@ -1,0 +1,295 @@
+@import "component-styles";
+
+.header {
+  position: relative;
+
+  &__bar-parent {
+    border-bottom: 1px solid $c-low;
+  }
+
+  &__bar-parent-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 50px;
+    grid-column: span 12;
+
+    @include small() {
+      height: 20px;
+    }
+
+    svg {
+      height: 24px;
+      width: auto;
+
+      @include small() {
+        height: 12px;
+      }
+    }
+  }
+
+  &__bar-app {
+    padding: 8px 0;
+    border-bottom: 1px solid $c-low;
+
+    @include medium() {
+      padding: 16px 0;
+      border-bottom: none;
+    }
+
+    @include large() {
+      padding: 16px 0;
+      border-bottom: none;
+    }
+  }
+
+  &__bar-app-inner {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    grid-column: span 12;
+
+    @include medium() {
+      flex-wrap: nowrap;
+    }
+
+    @include large() {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 24px;
+    line-height: 0;
+
+    svg {
+      width: 90px;
+      height: 24px;
+
+      @include medium() {
+        width: 165px;
+        height: 44px;
+      }
+
+      @include large() {
+        width: 165px;
+        height: 44px;
+      }
+    }
+  }
+
+  &__search {
+    position: relative;
+
+    @include small() {
+      order: 10;
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    @include medium() {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+
+    @include large() {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+  }
+
+  &__btn-check,
+  &__btn-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__btn-check {
+    background: $c-license;
+    color: $c-default;
+    @extend %button;
+
+    &:hover,
+    &:focus {
+      color: $c-white;
+    }
+
+    svg {
+      path {
+        fill: currentColor;
+      }
+    }
+
+    @include small() {
+      display: none;
+    }
+
+    @include medium() {
+      display: none;
+    }
+  }
+
+  &__btn-menu {
+    margin: 0 -20px 0 4px;
+    padding: 0 20px;
+  }
+
+  &__btn-label {
+    display: inline-block;
+    padding-left: 8px;
+  }
+
+  &__navigation {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+    visibility: hidden;
+    transition-property: visibility;
+    transition-timing-function: ease;
+    transition-duration: 0.2s;
+  }
+
+  &--open &__navigation {
+    visibility: visible;
+  }
+
+  &__navigation-backdrop {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: $c-medium;
+    opacity: 0;
+    text-indent: -5000px;
+    transition-property: opacity;
+    transition-timing-function: ease;
+    transition-duration: 0.2s;
+  }
+
+  &--open &__navigation-backdrop {
+    opacity: 0.3;
+  }
+
+  &__navigation-aside {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    padding: 24px 24px 40px 32px;
+    background: $c-white;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.22);
+    transform: translate(100%, 0);
+    transition-property: transform;
+    transition-timing-function: ease;
+    transition-duration: 0.2s;
+
+    @include medium() {
+      width: 280px;
+      padding: 24px 24px 40px 32px;
+    }
+
+    @include large() {
+      width: 491px;
+      padding: 40px 40px 80px 111px;
+    }
+  }
+
+  &--open &__navigation-aside {
+    transform: none;
+  }
+
+  &__navigation-close {
+    display: block;
+    padding: 24px;
+    margin: -24px;
+    border: none;
+    background: none;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+
+  &__navigation &__btn-check {
+    margin-left: 0;
+    margin-bottom: 16px;
+    background: $c-license;
+    color: $c-default;
+    @extend %button--small;
+
+    @include large() {
+      display: none;
+    }
+  }
+
+  &__navigation-list {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+    list-style-type: none;
+    padding: 32px 0 0 0;
+    margin: 0;
+  }
+
+  &__navigation-item {
+    display: block;
+    padding: 20px 0;
+    @extend %t-h4;
+    color: $c-default;
+  }
+
+  &__navigation-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include large() {
+      align-items: flex-start;
+    }
+  }
+
+  &__navigation-footer-text {
+    display: block;
+    padding-bottom: 24px;
+  }
+
+  &__navigation-footer-logo {
+    display: block;
+
+    svg {
+      width: 182px;
+      height: 26px;
+
+      @include medium() {
+        width: 182px;
+        height: 26px;
+      }
+
+      @include large() {
+        width: 200px;
+        height: 28px;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import "../../../../styles/colors.scss";
+@import "../../../../styles/typography.scss";
+@import "../../../../styles/media";
+@import "../../../../styles/button.scss";
+
+.page {
+  grid-column: span 6;
+
+  @include small() {
+    grid-column: span 12;
+  }
+}
+
+.button {
+  @extend %button--small;
+  margin: 0 0 0 8px;
+}
+
+.section {
+  margin-bottom: 40px;
+
+  &__buttons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    li + li {
+      margin-top: 8px;
+    }
+  }
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.help {
+  margin: 8px 0 0 0;
+  @extend %t-small;
+}

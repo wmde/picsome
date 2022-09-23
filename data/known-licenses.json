@@ -1,0 +1,726 @@
+[
+  {
+    "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "title": "Public Domain",
+    "version": "1.0",
+    "variant": "mark",
+    "spdx": "CC-PD",
+    "group": "PD"
+  },
+  {
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "title": "CC0",
+    "version": "1.0",
+    "spdx": "CC0",
+    "group": "CC0"
+  },
+  {
+    "url": "https://creativecommons.org/publicdomain/cc0/1.0/",
+    "title": "CC0",
+    "version": "1.0",
+    "spdx": "CC0",
+    "group": "CC0"
+  },
+  {
+    "url": "https://creativecommons.org/licenses/cc0/1.0/",
+    "title": "CC0",
+    "version": "1.0",
+    "spdx": "CC0",
+    "group": "CC0"
+  },
+  {
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "title": "CC0",
+    "version": "1.0",
+    "spdx": "CC0",
+    "group": "CC0"
+  },
+  {
+    "url": "https://creativecommons.org/licenses/by-nd-nc/2.0/jp/",
+    "title": "CC BY-NC-ND",
+    "version": "2.0",
+    "variant": "JP",
+    "spdx": "CC-BY-NC-ND-2.0",
+    "group": "CCBYNCND"
+  },
+  {
+    "url": "https://artlibre.org/",
+    "title": "Free Art License (FAL)",
+    "group": "CCBYSA"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Art-YorckProject",
+    "title": "Public Domain (PD-Art-YorckProject)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-self",
+    "title": "Public Domain (PD-self)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-author",
+    "title": "Public Domain (PD-author)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-user",
+    "title": "Public Domain (PD-user)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-old",
+    "title": "Public Domain (PD-old)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Abdul_Hamid",
+    "title": "Public Domain (PD-Abdul_Hamid)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Bain",
+    "title": "Public Domain (PD-Bain)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Brady-Handy",
+    "title": "Public Domain (PD-Brady-Handy)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-CAGov",
+    "title": "Public Domain (PD-CAGov)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-CQ_Roll_Call",
+    "title": "Public Domain (PD-CQ_Roll_Call)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Carpenter",
+    "title": "Public Domain (PD-Carpenter)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Curtis",
+    "title": "Public Domain (PD-Curtis)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Detroit",
+    "title": "Public Domain (PD-Detroit)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-FLGov",
+    "title": "Public Domain (PD-FLGov)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Frissell",
+    "title": "Public Domain (PD-Frissell)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Gottlieb",
+    "title": "Public Domain (PD-Gottlieb)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Gottscho",
+    "title": "Public Domain (PD-Gottscho)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Harris-Ewing",
+    "title": "Public Domain (PD-Harris-Ewing)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Highsmith",
+    "title": "Public Domain (PD-Highsmith)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Johnston",
+    "title": "Public Domain (PD-Johnston)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Korab",
+    "title": "Public Domain (PD-Korab)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Look",
+    "title": "Public Domain (PD-Look)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-LosAlamos",
+    "title": "Public Domain (PD-LosAlamos)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-MAGov",
+    "title": "Public Domain (PD-MAGov)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Matson",
+    "title": "Public Domain (PD-Matson)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-NCLC",
+    "title": "Public Domain (PD-NCLC)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-NWS",
+    "title": "Public Domain (PD-NWS)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-NYWT&S",
+    "title": "Public Domain (PD-NYWT&S)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-National_Photo_Company",
+    "title": "Public Domain (PD-National_Photo_Company)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-OK-LSBPD",
+    "title": "Public Domain (PD-OK-LSBPD)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-PRGov",
+    "title": "Public Domain (PD-PRGov)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-US-1978-89",
+    "title": "Public Domain (PD-US-1978-89)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-US-Codes-and-Standards-as-Statutory-Law",
+    "title": "Public Domain (PD-US-Codes-and-Standards-as-Statutory-Law)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-US-Medical_imaging",
+    "title": "Public Domain (PD-US-Medical_imaging)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-US-no_notice",
+    "title": "Public Domain (PD-US-no_notice)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-US-no_notice_advertisement",
+    "title": "Public Domain (PD-US-no_notice_advertisement)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-US-not_renewed",
+    "title": "Public Domain (PD-US-not_renewed)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-US-unpublished",
+    "title": "Public Domain (PD-US-unpublished)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USCG",
+    "title": "Public Domain (PD-USCG)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USCG",
+    "title": "Public Domain (PD-USCG)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov",
+    "title": "Public Domain (PD-USGov)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-ARM",
+    "title": "Public Domain (PD-USGov-ARM)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-AVO",
+    "title": "Public Domain (PD-USGov-AVO)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Atlas",
+    "title": "Public Domain (PD-USGov-Atlas)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Award",
+    "title": "Public Domain (PD-USGov-Award)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-BBG",
+    "title": "Public Domain (PD-USGov-BBG)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-BLM",
+    "title": "Public Domain (PD-USGov-BLM)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-CIA",
+    "title": "Public Domain (PD-USGov-CIA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-CIA",
+    "title": "Public Domain (PD-USGov-CIA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-CIA-WF",
+    "title": "Public Domain (PD-USGov-CIA-WF)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Congress",
+    "title": "Public Domain (PD-USGov-Congress)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Congress-AOC",
+    "title": "Public Domain (PD-USGov-Congress-AOC)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Congress-Speaker",
+    "title": "Public Domain (PD-USGov-Congress-Speaker)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-DEA",
+    "title": "Public Domain (PD-USGov-DEA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-DHS",
+    "title": "Public Domain (PD-USGov-DHS)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-DOC",
+    "title": "Public Domain (PD-USGov-DOC)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-DOC-Census",
+    "title": "Public Domain (PD-USGov-DOC-Census)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-DOE",
+    "title": "Public Domain (PD-USGov-DOE)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-DOJ",
+    "title": "Public Domain (PD-USGov-DOJ)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-DOL",
+    "title": "Public Domain (PD-USGov-DOL)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-DOS",
+    "title": "Public Domain (PD-USGov-DOS)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-DOT",
+    "title": "Public Domain (PD-USGov-DOT)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-DVA",
+    "title": "Public Domain (PD-USGov-DVA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-ED",
+    "title": "Public Domain (PD-USGov-ED)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-EPA",
+    "title": "Public Domain (PD-USGov-EPA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-FAA",
+    "title": "Public Domain (PD-USGov-FAA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-FBI",
+    "title": "Public Domain (PD-USGov-FBI)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-FDA",
+    "title": "Public Domain (PD-USGov-FDA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-FEMA",
+    "title": "Public Domain (PD-USGov-FEMA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-FSA",
+    "title": "Public Domain (PD-USGov-FSA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Federal_Reserve",
+    "title": "Public Domain (PD-USGov-Federal_Reserve)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-GAO",
+    "title": "Public Domain (PD-USGov-GAO)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-HHS",
+    "title": "Public Domain (PD-USGov-HHS)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-HHS-CDC",
+    "title": "Public Domain (PD-USGov-HHS-CDC)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-HHS-NIH",
+    "title": "Public Domain (PD-USGov-HHS-NIH)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-HUD",
+    "title": "Public Domain (PD-USGov-HUD)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Interior",
+    "title": "Public Domain (PD-USGov-Interior)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Interior-BOEMRE",
+    "title": "Public Domain (PD-USGov-Interior-BOEMRE)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Interior-HABS",
+    "title": "Public Domain (PD-USGov-Interior-HABS)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Interior-MMS",
+    "title": "Public Domain (PD-USGov-Interior-MMS)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Interior-USBR",
+    "title": "Public Domain (PD-USGov-Interior-USBR)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Interior-USGS-Minerals",
+    "title": "Public Domain (PD-USGov-Interior-USGS-Minerals)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Interior-USGS-NBII",
+    "title": "Public Domain (PD-USGov-Interior-USGS-NBII)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-MUTCD",
+    "title": "Public Domain (PD-USGov-MUTCD)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military",
+    "title": "Public Domain (PD-USGov-Military)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-Air_Force",
+    "title": "Public Domain (PD-USGov-Military-Air_Force)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-Army",
+    "title": "Public Domain (PD-USGov-Military-Army)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-Army-USACE",
+    "title": "Public Domain (PD-USGov-Military-Army-USACE)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-Army-USACMH",
+    "title": "Public Domain (PD-USGov-Military-Army-USACMH)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-Army-USAIOH",
+    "title": "Public Domain (PD-USGov-Military-Army-USAIOH)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-Badge",
+    "title": "Public Domain (PD-USGov-Military-Badge)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-DVIC",
+    "title": "Public Domain (PD-USGov-Military-DVIC)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-MDA",
+    "title": "Public Domain (PD-USGov-Military-MDA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-Marines",
+    "title": "Public Domain (PD-USGov-Military-Marines)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-NGA",
+    "title": "Public Domain (PD-USGov-Military-NGA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-National_Guard",
+    "title": "Public Domain (PD-USGov-Military-National_Guard)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military-Navy",
+    "title": "Public Domain (PD-USGov-Military-Navy)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Military_award",
+    "title": "Public Domain (PD-USGov-Military_award)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NASA",
+    "title": "Public Domain (PD-USGov-NASA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NASA-AP",
+    "title": "Public Domain (PD-USGov-NASA-AP)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NCBI-scienceprimer",
+    "title": "Public Domain (PD-USGov-NCBI-scienceprimer)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NIH",
+    "title": "Public Domain (PD-USGov-NIH)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NIH-NIAID-Videos",
+    "title": "Public Domain (PD-USGov-NIH-NIAID-Videos)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NIST",
+    "title": "Public Domain (PD-USGov-NIST)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NOAA",
+    "title": "Public Domain (PD-USGov-NOAA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NPS",
+    "title": "Public Domain (PD-USGov-NPS)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NPS-HAER_",
+    "title": "Public Domain (PD-USGov-NPS-HAER_)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NRO",
+    "title": "Public Domain (PD-USGov-NRO)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NSA",
+    "title": "Public Domain (PD-USGov-NSA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NSF",
+    "title": "Public Domain (PD-USGov-NSF)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-NTSB",
+    "title": "Public Domain (PD-USGov-NTSB)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-ODNI",
+    "title": "Public Domain (PD-USGov-ODNI)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-PC",
+    "title": "Public Domain (PD-USGov-PC)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-PHS",
+    "title": "Public Domain (PD-USGov-PHS)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-POTUS",
+    "title": "Public Domain (PD-USGov-POTUS)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-SI",
+    "title": "Public Domain (PD-USGov-SI)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-TVA",
+    "title": "Public Domain (PD-USGov-TVA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-Treasury",
+    "title": "Public Domain (PD-USGov-Treasury)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-USAID",
+    "title": "Public Domain (PD-USGov-USAID)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-USDA",
+    "title": "Public Domain (PD-USGov-USDA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-USDA-ARS",
+    "title": "Public Domain (PD-USGov-USDA-ARS)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-USDA-FS",
+    "title": "Public Domain (PD-USGov-USDA-FS)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-USDA-NAL",
+    "title": "Public Domain (PD-USGov-USDA-NAL)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-USDA-NRCS",
+    "title": "Public Domain (PD-USGov-USDA-NRCS)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-USIA",
+    "title": "Public Domain (PD-USGov-USIA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-USTR",
+    "title": "Public Domain (PD-USGov-USTR)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-VOA",
+    "title": "Public Domain (PD-USGov-VOA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-WPA",
+    "title": "Public Domain (PD-USGov-WPA)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USGov-money",
+    "title": "Public Domain (PD-USGov-money)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-USNWR",
+    "title": "Public Domain (PD-USNWR)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Underwood",
+    "title": "Public Domain (PD-Underwood)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-VAR",
+    "title": "Public Domain (PD-VAR)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-Van_Vechten",
+    "title": "Public Domain (PD-Van_Vechten)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-WSMRM",
+    "title": "Public Domain (PD-WSMRM)",
+    "group": "PD"
+  },
+  {
+    "url": "https://commons.wikimedia.org/wiki/Template:PD-WorldWind",
+    "title": "Public Domain (PD-WorldWind)",
+    "group": "PD"
+  }
+]

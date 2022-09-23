@@ -1,0 +1,22 @@
+@import "component-styles";
+
+.container {
+  grid-column: 2 / span 10;
+
+  @include small() {
+    grid-column: span 12;
+  }
+}
+
+.button {
+  display: inline-flex;
+  margin-top: 32px;
+}
+
+.headline {
+  @extend %t-h1;
+}
+
+.content {
+  @extend %t-lead;
+}

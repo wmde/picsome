@@ -1,0 +1,268 @@
+@import "../../../styles/shared.scss";
+
+.explain {
+  grid-column: span 12;
+  background: $c-license;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-top: 80px;
+
+  @include medium() {
+    margin-top: 40px;
+  }
+
+  @include small() {
+    margin-top: 0px;
+  }
+
+  &__inner {
+    grid-column: 2 / span 10;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    padding: 50px 0;
+    align-items: center;
+
+    @include small() {
+      padding: 24px 0;
+      grid-template-columns: 100%;
+      grid-column: span 6;
+    }
+  }
+
+  &__left {
+    grid-column: span 6;
+
+    @include small() {
+      grid-column: span 1;
+    }
+  }
+
+  &__right {
+    grid-column: span 4;
+    display: grid;
+    justify-items: center;
+
+    @include small() {
+      grid-column: span 1;
+      margin-top: 32px;
+    }
+
+    svg {
+      max-width: 100%;
+    }
+  }
+}
+
+.overview {
+  margin-top: 100px;
+
+  @include small() {
+    margin-top: 32px;
+  }
+
+  &__headline {
+    margin: 0;
+    grid-column: 2 / span 10;
+
+    @include small() {
+      grid-column: span 6;
+      text-align: center;
+    }
+  }
+
+  &__table {
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    @include small() {
+      grid-column: span 6;
+    }
+
+    &Container {
+      margin-top: 82px;
+
+      @include small() {
+        margin-top: 32px;
+      }
+    }
+
+    &Inner {
+      grid-column: 2 / span 11;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: min-content;
+
+      @include small() {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column: span 12;
+      }
+    }
+
+    &Header {
+      grid-column: 2 / span 11;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      h4 {
+        margin: 0 0 24px;
+
+        @include small() {
+          margin: 0 0 12px;
+        }
+      }
+
+      @include small() {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column: span 6;
+      }
+    }
+
+    &Row {
+      position: relative;
+      padding: 24px 0;
+      border-top: 2px solid $c-low;
+      grid-column: span 11;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      @include small() {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 32px;
+      }
+
+      &::after {
+        // Indicator
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -9%;
+        bottom: 0;
+        width: 13px;
+        background: #52c41a;
+
+        @include small() {
+          display: none;
+        }
+      }
+
+      &--primary::after {
+        background: #52c41a;
+      }
+
+      &--secondary::after {
+        background: #ffff00;
+      }
+
+      &--copyright {
+        padding-top: 24px + 8px + 2px;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 8px;
+          left: 0;
+          right: 0;
+          border-top: 2px solid $c-low;
+        }
+
+        &::after {
+          top: 8px;
+          background: $c-warning;
+        }
+      }
+    }
+
+    &Pikto {
+      @extend %t-body-sans;
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      @include medium() {
+        font-size: 18px;
+      }
+
+      @include small() {
+        align-items: center;
+      }
+
+      & + & {
+        margin-left: 12px;
+        @include below-large() {
+          margin-left: 8px;
+        }
+      }
+
+      svg {
+        width: 44px;
+        margin-bottom: 18px;
+        height: auto;
+
+        @include medium() {
+          width: 32px;
+        }
+
+        @include small() {
+          width: 24px;
+          height: 24px;
+          margin-bottom: 8px;
+        }
+      }
+
+      &Name {
+        @extend %t-h4;
+
+        @include small() {
+          display: grid;
+          align-items: flex-end;
+          font-size: 20px;
+        }
+      }
+
+      &Container {
+        display: flex;
+      }
+    }
+
+    &Features {
+      padding-right: 8px;
+    }
+
+    &Features,
+    &Terms {
+      div {
+        display: flex;
+        align-items: center;
+
+        @include below-large() {
+          font-size: 14px;
+          line-height: 18px;
+        }
+
+        & + div {
+          margin-top: 8px;
+        }
+      }
+
+      svg {
+        margin-right: 8px;
+        min-width: 20px;
+
+        @include small() {
+          min-width: 16px;
+          width: 16px;
+        }
+      }
+    }
+  }
+}
+
+.label {
+  grid-column: span 12;
+  @extend %t-table-text;
+}

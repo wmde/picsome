@@ -1,0 +1,8 @@
+*.ico
+*.lock
+.blitz
+.env*
+.gitkeep
+.gitlab-ci.yml
+.next
+db/migrations

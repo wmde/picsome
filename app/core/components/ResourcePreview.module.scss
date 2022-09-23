@@ -1,0 +1,157 @@
+@import "component-styles";
+
+.item {
+  display: block;
+  padding: 0 0 200px;
+  overflow: hidden;
+  border-radius: 5px;
+  line-height: 0;
+  position: relative;
+  grid-column: var(--width);
+  @extend %s-shadow;
+
+  &:hover {
+    .hover {
+      opacity: 1;
+    }
+
+    .top,
+    .footer {
+      opacity: 1;
+      transform: translateY(0);
+      transition: 0 none;
+    }
+  }
+
+  @include medium() {
+    grid-column: span 4;
+  }
+
+  @include small() {
+    grid-column: span 6;
+  }
+
+  &Hero {
+    padding-bottom: 100%;
+  }
+}
+
+.button {
+  display: block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(80, 90, 99, 0.8);
+  padding: 20px 16px;
+  flex-direction: column;
+  opacity: 0;
+  display: flex;
+  transition: opacity 0.1s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.top {
+  flex-grow: 1;
+  display: flex;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.1s ease 0.1s;
+}
+
+.action {
+  display: flex;
+  @extend %t-h4;
+  margin: 0;
+  color: $c-black;
+  flex-grow: 1;
+}
+
+.footer {
+  display: flex;
+  justify-self: flex-end;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.2s ease 0.2s;
+
+  span {
+    display: block;
+    @extend %t-body-sans;
+    color: $c-white;
+  }
+}
+
+.label {
+  display: flex;
+  span {
+    margin-left: 8px;
+  }
+  & + & {
+    margin-top: 8px;
+  }
+}
+
+.add {
+  display: flex;
+  width: 42px;
+  height: 36px;
+  color: $c-white;
+  background: $c-default;
+  border: none;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  pointer-events: all;
+
+  &:hover {
+    background: $c-button-hover;
+  }
+
+  svg {
+    width: 20px;
+    height: auto;
+  }
+}
+
+.curated {
+  background: $c-white;
+  width: 24px;
+  height: 32px;
+  z-index: 1;
+  position: absolute;
+  right: 10px;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 0 0 -8px;
+  padding: 12px 0;
+
+  &__item {
+    margin-left: 8px;
+    margin-bottom: 8px;
+  }
+}

@@ -1,0 +1,40 @@
+@import "../../../styles/colors.scss";
+@import "../../../styles/typography.scss";
+@import "../../../styles/media.scss";
+
+.form {
+  display: flex;
+
+  @include small() {
+    flex-direction: column;
+  }
+}
+
+.button {
+  background: $c-dark;
+  color: $c-light;
+  outline: 0;
+  border: 0;
+  box-shadow: 0 none;
+  padding: 16px;
+
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0px;
+  text-align: left;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: 0.2s ease background-color;
+  white-space: nowrap;
+
+  &:hover {
+    background: #080144;
+  }
+
+  @include small() {
+    border-radius: 0 0 5px 5px;
+  }
+}
