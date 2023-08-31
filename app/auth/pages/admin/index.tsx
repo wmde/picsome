@@ -8,6 +8,8 @@ import { BlockUserInput, blockUserInputSchema } from "app/auth/validations"
 import { FORM_ERROR } from "final-form"
 import LabeledTextField from "app/core/components/LabeledTextField"
 import Form from "app/core/components/Form"
+import deleteAccount from "app/auth/mutations/deleteAccount"
+import migrateAll from "app/auth/mutations/migrateAll"
 
 const BlockUserSection = () => {
   const [blockUserMutation, { variables: mutationVariables, isSuccess }] = useMutation(blockUser)
@@ -59,6 +61,33 @@ const BlockUserSection = () => {
   )
 }
 
+const DeleteSection = () => {
+  const [migrateAllMutation, { variables: isSuccess }] = useMutation(migrateAll)
+
+  return (
+    <section className={styles.section}>
+      <h2>DELETE ALL</h2>
+
+      {isSuccess ? (
+        <p>Done.</p>
+      ) : (
+        <Form
+          submitText={"Delete All"}
+          onSubmit={async (values) => {
+            try {
+              await migrateAllMutation()
+            } catch (error: any) {
+              return {
+                [FORM_ERROR]: error.message,
+              }
+            }
+          }}
+        ></Form>
+      )}
+    </section>
+  )
+}
+
 export type AdminPageProps = {}
 
 export const getServerSideProps: GetServerSideProps<AdminPageProps> = async ({ req, res }) => {
@@ -81,6 +110,7 @@ const AdminPage: BlitzPage<AdminPageProps> = (props) => {
             <T _str="Verwaltungskonsole" />
           </h1>
           <BlockUserSection />
+          <DeleteSection />
         </div>
       </Grid>
     </>
